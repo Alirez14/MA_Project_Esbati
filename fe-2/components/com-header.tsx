@@ -1,19 +1,4 @@
-import Link from 'next/link';
-import { constApp } from '../constants/const-app';
-
 export const ComHeader = () => {
-	const renderNavLinks = () => {
-		return constApp.navOptions.map((navOption, index) => {
-			return (
-				<li key={index} className=''>
-					<Link href={navOption.url} className=''>
-						{navOption.title}
-					</Link>
-				</li>
-			);
-		});
-	};
-
 	return (
 		<div className='navbar bg-base-100'>
 			<div className='navbar-start'>
@@ -39,12 +24,18 @@ export const ComHeader = () => {
 						tabIndex={0}
 						className='menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52'
 					>
-						{renderNavLinks()}
+						<li>
+							<a>Item 1</a>
+						</li>
 					</ul>
 				</div>
 			</div>
 			<div className='navbar-center hidden lg:flex'>
-				<ul className='menu menu-horizontal p-0'>{renderNavLinks()}</ul>
+				<ul className='menu menu-horizontal p-0'>
+					<li>
+						<a>Item 1</a>
+					</li>
+				</ul>
 			</div>
 			<div className='navbar-end'>
 				<a className='btn'>Get started</a>

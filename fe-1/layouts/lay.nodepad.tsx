@@ -1,13 +1,15 @@
-import React from 'react';
 import ComFooter from '../components/com-footer';
 import { ComHeader } from '../components/com-header';
+import ComInputNotepad from '../components/com-input-notepad';
 
-export const LayGeneral = ({ children }: React.PropsWithChildren) => {
+const LayNodepad = () => {
 	return (
 		<>
 			<ComHeader></ComHeader>
-			{children}
+			<ComInputNotepad></ComInputNotepad>
 			<ComFooter></ComFooter>
 		</>
 	);
 };
+
+export default LayNodepad;
