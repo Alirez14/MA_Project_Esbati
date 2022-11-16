@@ -1,12 +1,12 @@
 import ComFooter from '../components/com-footer';
 import { ComHeader } from '../components/com-header';
-import ComInputNotepad from '../components/com-input-notepad';
+import ComInputEditor from '../components/com-input-editor/com-input-editor';
 
 const LayNodepad = () => {
 	return (
 		<>
 			<ComHeader></ComHeader>
-			<ComInputNotepad></ComInputNotepad>
+			<ComInputEditor></ComInputEditor>
 			<ComFooter></ComFooter>
 		</>
 	);

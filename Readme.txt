@@ -1,5 +1,3 @@
-# MA_Project_Esbati
-this is the repo for my master project 
 The common Latex implementation: https://miktex.org/download
 Windows version is bundeled with the TexWorks Editor and a package manager 
 for addons.
