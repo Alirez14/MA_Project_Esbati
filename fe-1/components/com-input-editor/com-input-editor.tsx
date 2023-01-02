@@ -2,7 +2,7 @@ import BulletList from '@tiptap/extension-bullet-list';
 import Highlight from '@tiptap/extension-highlight';
 import ListItem from '@tiptap/extension-list-item';
 import TextAlign from '@tiptap/extension-text-align';
-import { EditorContent, useEditor } from '@tiptap/react';
+import { Editor, EditorContent, useEditor } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
 import style from './com-input-editor.module.scss';
 
@@ -15,7 +15,7 @@ const ComInputEditor = () => {
 			}),
 			Highlight,
 			BulletList,
-			ListItem,
+			ListItem.configure({ HTMLAttributes: { class: 'list-disc' } }),
 		],
 		content: `
 			Try to select this text to see what we call the bubble menu.
@@ -28,6 +28,7 @@ const ComInputEditor = () => {
 			},
 		},
 	});
+	console.log(editor?.getJSON());
 
 	return (
 		<>
@@ -37,7 +38,7 @@ const ComInputEditor = () => {
 	);
 };
 
-const MenuBar = ({ editor }: any) => {
+const MenuBar = ({ editor }: { editor: Editor | null }) => {
 	if (!editor) {
 		return null;
 	}
@@ -115,6 +116,18 @@ const MenuBar = ({ editor }: any) => {
 				className={editor.isActive('bulletList') ? 'is-active' : ''}
 			>
 				toggleBulletList
+			</button>
+			<button
+				onClick={() => editor.chain().focus().sinkListItem('listItem').run()}
+				disabled={!editor.can().sinkListItem('listItem')}
+			>
+				sinkListItem
+			</button>
+			<button
+				onClick={() => editor.chain().focus().liftListItem('listItem').run()}
+				disabled={!editor.can().liftListItem('listItem')}
+			>
+				liftListItem
 			</button>
 		</div>
 	);
