@@ -1,3 +1,20 @@
+// import dynamic from 'next/dynamic';
+// import Link from 'next/link';
+// import { constApp } from '../constants/const-app';
+
+// const Header = dynamic(() => import('fe2/com-header'), {
+// 	ssr: false,
+// });
+// export const ComHeader = () => {
+// 	return (
+// 		<>
+// 			<div className=''>
+// 				<Header navOptions={constApp.navOptions} Link={Link} />
+// 			</div>
+// 		</>
+// 	);
+// };
+
 import Link from 'next/link';
 import { constApp } from '../constants/const-app';
 

@@ -15,5 +15,10 @@ export const constApp = {
 			url: '/converter/markdown',
 			icon: 'code-working',
 		},
+		{
+			title: 'AsciiDoc Converter',
+			url: '/converter/asciidoc',
+			icon: 'code-working',
+		},
 	],
 };

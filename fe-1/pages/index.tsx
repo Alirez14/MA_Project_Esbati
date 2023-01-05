@@ -1,4 +1,4 @@
-import { LayGeneral } from '../layouts/lay.general';
+import { LayGeneral } from '../layouts/lay-general';
 
 export default function Home() {
 	return (

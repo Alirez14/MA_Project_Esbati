@@ -1,5 +1,5 @@
 {
-	"name": "no-more-homeless",
+	"name": "fe1",
 	"version": "0.1.0",
 	"private": true,
 	"scripts": {
@@ -12,6 +12,8 @@
 		"@tiptap/extension-bubble-menu": "^2.0.0-beta.202",
 		"@tiptap/extension-bullet-list": "^2.0.0-beta.202",
 		"@tiptap/extension-floating-menu": "^2.0.0-beta.202",
+		"@tiptap/extension-hard-break": "^2.0.0-beta.209",
+		"@tiptap/extension-heading": "^2.0.0-beta.209",
 		"@tiptap/extension-highlight": "^2.0.0-beta.202",
 		"@tiptap/extension-list-item": "^2.0.0-beta.202",
 		"@tiptap/extension-text-align": "^2.0.0-beta.202",
@@ -25,9 +27,12 @@
 		"react": "18.2.0",
 		"react-dom": "18.2.0",
 		"recoil": "^0.7.6",
+		"turndown": "^7.1.1",
 		"typescript": "4.8.4"
 	},
 	"devDependencies": {
+		"@tailwindcss/typography": "^0.5.8",
+		"@types/turndown": "^5.0.1",
 		"autoprefixer": "^10.4.13",
 		"eslint": "^8.27.0",
 		"eslint-config-next": "13.0.2",

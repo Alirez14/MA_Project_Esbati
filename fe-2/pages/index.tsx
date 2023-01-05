@@ -1,9 +1,27 @@
-import { LayGeneral } from '../layouts/lay.general';
+import Link from 'next/link';
+import ComHeader from '../components/com-header';
 
 export default function Home() {
 	return (
-		<LayGeneral>
-			<div className='container mx-auto bg-slate-800'>Hello</div>
-		</LayGeneral>
+		<ComHeader
+			navOptions={[
+				{
+					title: 'Home',
+					url: '/home',
+					icon: 'home',
+				},
+				{
+					title: 'About',
+					url: '/about',
+					icon: 'information-circle',
+				},
+				{
+					title: 'Markdown Converter',
+					url: '/converter/markdown',
+					icon: 'code-working',
+				},
+			]}
+			Link={Link}
+		></ComHeader>
 	);
 }
