@@ -1,6 +1,9 @@
 const { dependencies } = require('./package.json');
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+	images: {
+		domains: ['images.pexels.com'],
+	},
 	reactStrictMode: true,
 	swcMinify: true,
 	eslint: {

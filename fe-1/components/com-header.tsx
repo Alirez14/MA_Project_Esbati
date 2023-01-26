@@ -35,7 +35,7 @@ export const ComHeader = () => {
 		<div className='navbar bg-base-100'>
 			<div className='navbar-start'>
 				<div className='dropdown'>
-					<a className='btn btn-ghost normal-case text-xl'>daisyUI</a>
+					<a className='btn btn-ghost normal-case text-xl'>Master Converter</a>
 					<label tabIndex={0} className='btn btn-ghost lg:hidden'>
 						<svg
 							xmlns='http://www.w3.org/2000/svg'
@@ -62,9 +62,6 @@ export const ComHeader = () => {
 			</div>
 			<div className='navbar-center hidden lg:flex'>
 				<ul className='menu menu-horizontal p-0'>{renderNavLinks()}</ul>
-			</div>
-			<div className='navbar-end'>
-				<a className='btn'>Get started</a>
 			</div>
 		</div>
 	);
