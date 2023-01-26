@@ -13,11 +13,11 @@ unfortunately this application is not ready for the production yet. But you can 
 5. cd fe-2 folder 
 6. npm i 
 7. npm run dev
-8. and then the fe-1 on docker can consume the fe-2 hosted component on localhost:3000
-
+8. open browser and go to localhost:3000
+> fe-1 on docker can consume the fe-2 hosted component on localhost:3001
+> 
 > also you can start the fe-1 the same way as fe-2
 
-```bash
 docker compose up
 ```
  
