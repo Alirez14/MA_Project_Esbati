@@ -16,26 +16,16 @@ const nextConfig = {
 					'./com-header': './components/com-converter-asciidoc.tsx',
 				},
 				shared: {
-					...dependencies,
+					...addEagerDependencies(dependencies),
 					react: {
 						singleton: true,
-						requiredVersion: false,
+						requiredVersion: dependencies.react,
 						eager: true,
 					},
 					'react-dom': {
 						singleton: true,
-						requiredVersion: false,
 						eager: true,
-					},
-					'next/link': {
-						requiredVersion: false,
-						singleton: true,
-						eager: true,
-					},
-					'next/router': {
-						requiredVersion: false,
-						singleton: true,
-						eager: true,
+						requiredVersion: dependencies['react-dom'],
 					},
 				},
 			})
@@ -58,5 +48,16 @@ const nextConfig = {
 		return config;
 	},
 };
-
+const addEagerDependencies = (depList) => {
+	const eagerDependencies = Object.keys(depList).filter((dep) => dep !== 'react' && dep !== 'react-dom');
+	const list = {};
+	eagerDependencies.forEach((dep) => {
+		list[dep] = {
+			singleton: true,
+			eager: true,
+			requiredVersion: dependencies[dep],
+		};
+	});
+	return list;
+};
 module.exports = nextConfig;

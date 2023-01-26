@@ -1,0 +1,10 @@
+version: "3.9"
+services:
+    fe1:
+        build: ./fe-1/
+        ports:
+            - "3000:3000"
+    fe2:
+        build: ./fe-2/
+        ports:
+            - "3001:3001"
