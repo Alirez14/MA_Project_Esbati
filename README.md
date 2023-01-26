@@ -15,6 +15,8 @@ unfortunately this application is not ready for the production yet. But you can 
 7. npm run dev
 8. and then the fe-1 on docker can consume the fe-2 hosted component on localhost:3000
 
+> also you can start the fe-1 the same way as fe-2
+
 ```bash
 docker compose up
 ```
