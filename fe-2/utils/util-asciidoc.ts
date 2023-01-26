@@ -60,7 +60,7 @@ const utilAsciidoc = function (string: string) {
 	// remove anchor surrounding an img
 	let images = all.querySelectorAll('img');
 	for (let i = 0; i < images.length; i++) {
-		let parentNode = (images[i].parentNode as HTMLElement) || '';
+		let parentNode: any = (images[i].parentNode as HTMLElement) || '';
 		if (parentNode.parentNode)
 			if (parentNode.constructor === HTMLAnchorElement) parentNode.parentNode.replaceChild(images[i], parentNode);
 	}

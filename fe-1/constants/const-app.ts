@@ -2,7 +2,7 @@ export const constApp = {
 	navOptions: [
 		{
 			title: 'Home',
-			url: '/home',
+			url: '/',
 			icon: 'home',
 		},
 		{

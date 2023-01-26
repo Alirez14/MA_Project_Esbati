@@ -13,7 +13,7 @@ const nextConfig = {
 				filename: 'static/chunks/remoteEntry.js', // remote file name which will used later
 				exposes: {
 					// expose all component here.
-					'./com-header': './components/com-header.tsx',
+					'./com-header': './components/com-converter-asciidoc.tsx',
 				},
 				shared: {
 					...dependencies,

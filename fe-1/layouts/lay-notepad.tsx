@@ -1,14 +1,18 @@
-import { useState } from 'react';
+import { ReactElement, useState } from 'react';
 import ComFooter from '../components/com-footer';
 import { ComHeader } from '../components/com-header';
 import ComInputEditor from '../components/com-input-editor/com-input-editor';
 
-type props = { converter: Function };
+type props = { converter: Function; converterComponent?: ReactElement };
 
-const LayNotepad = ({ converter }: props) => {
+const LayNotepad = ({ converter, converterComponent }: props) => {
 	const [convertedValue, setConvertedValue] = useState<string>('');
-	const handelConvert = (htmlData: any) => {
-		setConvertedValue(converter(htmlData));
+	const handelConvert = (htmlData: string) => {
+		if (converterComponent) {
+			converter(htmlData);
+		} else {
+			setConvertedValue(converter(htmlData));
+		}
 	};
 
 	return (
@@ -18,7 +22,11 @@ const LayNotepad = ({ converter }: props) => {
 				<div className='flex-1'>
 					<ComInputEditor onChange={handelConvert}></ComInputEditor>
 				</div>
-				<textarea value={convertedValue} disabled className='flex-1'></textarea>
+				{converterComponent ? (
+					converterComponent
+				) : (
+					<textarea value={convertedValue} disabled className='flex-1'></textarea>
+				)}
 			</div>
 
 			<ComFooter></ComFooter>

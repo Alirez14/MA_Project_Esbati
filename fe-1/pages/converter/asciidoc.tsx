@@ -1,14 +1,21 @@
+import dynamic from 'next/dynamic';
+import { useState } from 'react';
 import LayNotepad from '../../layouts/lay-notepad';
-import utilAsciidoc from '../../utils/util-asciidoc';
+
+const MicroAsciiDynamic = dynamic(() => import('fe2/com-header'), { ssr: false });
 
 const AsciiDoc = () => {
+	const [htmlData, setHtmlData] = useState<string>('');
 	const handleConvert = (htmlData: any) => {
-		console.log(htmlData);
-		const result = utilAsciidoc(htmlData);
-		console.log(result);
-		return result.replaceAll(/\n\n/g, '\n');
+		setHtmlData(htmlData);
 	};
-	return <LayNotepad converter={handleConvert}></LayNotepad>;
+	//TODO: fixing the Micro Ascii component eslint error
+	return (
+		<LayNotepad
+			converter={handleConvert}
+			converterComponent={<MicroAsciiDynamic htmlData={htmlData}></MicroAsciiDynamic>}
+		></LayNotepad>
+	);
 };
 
 export default AsciiDoc;
